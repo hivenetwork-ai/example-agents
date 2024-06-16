@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: llama-index-readers-web
+Version: 0.1.18
+Summary: llama-index readers web integration
+License: MIT
+Keywords: BFS,article,atom,documentation,feed,main content extractor,news,readthedocs,rss,scraper,selenium,seo,sitemap,substack,trafilatura,unstructured.io,url,web reader,web,website
+Author: Your Name
+Author-email: you@example.com
+Maintainer: HawkClaws
+Requires-Python: >=3.8.1,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: aiohttp (>=3.9.1,<4.0.0)
+Requires-Dist: beautifulsoup4 (>=4.12.3,<5.0.0)
+Requires-Dist: chromedriver-autoinstaller (>=0.6.3,<0.7.0)
+Requires-Dist: html2text (>=2020.1.16,<2021.0.0)
+Requires-Dist: llama-index-core (>=0.10.1,<0.11.0)
+Requires-Dist: newspaper3k (>=0.2.8,<0.3.0)
+Requires-Dist: playwright (>=1.30,<2.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: selenium (>=4.17.2,<5.0.0)
+Requires-Dist: spider-client (>=0.0.11,<0.0.12)
+Requires-Dist: urllib3 (>=1.1.0)
+Description-Content-Type: text/markdown
+
+

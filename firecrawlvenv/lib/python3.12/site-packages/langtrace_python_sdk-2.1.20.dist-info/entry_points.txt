@@ -1,0 +1,2 @@
+[fsspec.specs]
+langtracefs = langtrace_python_sdk:LangTraceFileSystem
