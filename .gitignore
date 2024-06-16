@@ -5,3 +5,5 @@ venv
 .DS_Store
 **/__pycache__/
 hive_agent.db
+hive-agent-data/    
+firecrawlvenv/
