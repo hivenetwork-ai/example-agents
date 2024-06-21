@@ -1,4 +1,4 @@
-# cube3-official-agent
+# firecrawl-official-agent
 
 This agent allows you to ask questions and evaluate the risk associated with wallets and smart contracts in real-time. This allows you to mitigate the risk of falling victim to fraud.
 
