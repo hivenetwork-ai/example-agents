@@ -31,10 +31,9 @@ def fetch_latest_news(query: str) -> Optional[str]:
 
 if __name__ == "__main__":
     my_agent = HiveAgent(
-       name="my_agent",
+       name="news_agent",
        functions=[fetch_latest_news],
-       config_path="C:/Users/Tian/Desktop/hive-agent/test/skills.toml",
-       instruction="Use appropriate sources to answer the questions.",
+       instruction="Use appropriate news sources to answer the questions.",
     )
     
     my_agent.run()
