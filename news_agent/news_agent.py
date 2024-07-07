@@ -33,6 +33,7 @@ if __name__ == "__main__":
     my_agent = HiveAgent(
        name="news_agent",
        functions=[fetch_latest_news],
+       config_path="/Users/Tian/Desktop/hive-agent/hive-agent-py/hive_config_example.toml",
        instruction="Use appropriate news sources to answer the questions.",
     )
     
