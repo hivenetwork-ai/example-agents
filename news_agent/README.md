@@ -48,7 +48,7 @@ curl --location 'localhost:8000/api/v1/chat' \
     "session_id": "session123",
     "chat_data": {
         "messages": [
-            { "role": "user", "content": "TODO" }
+            { "role": "user", "content": "What's going on in Canada right now?" }
         ]
     }
 }'
