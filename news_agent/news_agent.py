@@ -33,7 +33,7 @@ if __name__ == "__main__":
     my_agent = HiveAgent(
        name="news_agent",
        functions=[fetch_latest_news],
-       config_path="./hive_config.example.toml",
+       config_path="./hive_config.toml",
        instruction="Use appropriate news sources to answer the questions.",
     )
     
