@@ -17,7 +17,7 @@ Built with [Hive Agent Kit](https://github.com/hivenetwork-ai/hive-agent-py).
   You can use other LLMs, in which case you can add a corresponding API key
   - `ANTHROPIC_API_KEY` from Anthropic
   - `MISTRAL_API_KEY` from Mistral 
-  - Ollama models are also supported
+  - All [Ollama models](https://ollama.com/library) are supported
 - Create a virtual Python environment
 ```
 $ python -m venv ./venv
