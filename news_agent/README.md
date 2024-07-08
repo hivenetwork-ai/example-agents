@@ -1,6 +1,5 @@
-# News Agents
-This News Agent leverages a news API to fetch and use news from a wide array of sources. 
-It processes these inputs to deliver comprehensive, contextual, and well-researched responses tailored to user queries. 
+# News Agent
+This News Agent leverages a news API to fetch and process news from a wide array of sources to deliver comprehensive, contextual, and well-researched responses tailored to user queries. 
 Whether you're seeking the latest headlines, in-depth analyses, or specific topic updates, this agent ensures you receive accurate and timely information.
 
 Built with [Hive Agent Kit](https://github.com/hivenetwork-ai/hive-agent-py).
@@ -15,10 +14,10 @@ Built with [Hive Agent Kit](https://github.com/hivenetwork-ai/hive-agent-py).
 - API keys for third party tools are not provided.
   - `OPENAI_API_KEY` from OpenAI
   
-  You can also use other LLM types, in which case you can add the corresponding API keys
+  You can use other LLMs, in which case you can add a corresponding API key
   - `ANTHROPIC_API_KEY` from Anthropic
   - `MISTRAL_API_KEY` from Mistral 
-  - Ollama models can also be used
+  - Ollama models are also supported
 - Create a virtual Python environment
 ```
 $ python -m venv ./venv
