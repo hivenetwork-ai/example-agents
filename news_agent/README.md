@@ -14,6 +14,7 @@ Built with [Hive Agent Kit](https://github.com/hivenetwork-ai/hive-agent-py).
 - Copy the contents of [.env.example](.env.example) into your new .env file
 - API keys for third party tools are not provided.
   - `OPENAI_API_KEY` from OpenAI
+  
   You can also use other LLM types, in which case you can add the corresponding API keys
   - `ANTHROPIC_API_KEY` from Anthropic
   - `MISTRAL_API_KEY` from Mistral 
