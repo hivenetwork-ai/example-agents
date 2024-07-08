@@ -19,7 +19,6 @@ Built with [Hive Agent Kit](https://github.com/hivenetwork-ai/hive-agent-py).
   - `ANTHROPIC_API_KEY` from Anthropic
   - `MISTRAL_API_KEY` from Mistral 
   - Ollama models can also be used
-- Create a new TOML file and copy the contents of
 - Create a virtual Python environment
 ```
 $ python -m venv ./venv
