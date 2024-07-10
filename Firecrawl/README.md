@@ -28,6 +28,8 @@ $ pip install -r requirements.txt
 ```
 
 ## Usage
+
+- Add the url to the .env 
 - Run it
 ```
 (venv) $ python main.py
