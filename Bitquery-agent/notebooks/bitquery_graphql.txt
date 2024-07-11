@@ -1,0 +1,45 @@
+query subscription {
+  Solana {
+    InstructionBalanceUpdates(limit: {count: 10}) {
+      Transaction {
+        Index
+        FeePayer
+        Fee
+        Signature
+        Result {
+          Success
+          ErrorMessage
+        }
+      }
+      Instruction {
+        InternalSeqNumber
+        Index
+        CallPath
+        Program {
+          Address
+          Name
+          Parsed
+        }
+      }
+      Block {
+        Time
+        Hash
+        Height
+      }
+      BalanceUpdate {
+        Account {
+          Address
+        }
+        Amount
+        Currency {
+          Decimals
+          CollectionAddress
+          Name
+          Key
+          IsMutable
+          Symbol
+        }
+      }
+    }
+  }
+}

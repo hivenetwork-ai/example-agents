@@ -1,0 +1,8 @@
+venv
+.env
+.idea
+.DS_Store
+**/__pycache__/
+hive_agent.db   
+hive-agent-data/
+bitqueryvenv/
