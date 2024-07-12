@@ -1,15 +1,11 @@
 from hive_agent import HiveAgent
 import os
-from typing import Optional, Dict
-import time
 import logging
 
 logging.basicConfig(level=logging.INFO)
 
-
 def get_config_path(filename):
     return os.path.abspath(os.path.join(os.path.dirname(__file__), filename))
-
 
 instruction = """ Welcome to the Uniswap Documentation Q&A Assistant! Your role is to provide accurate and concise answers to user queries based on the official Uniswap documentation. When responding, keep the following guidelines in mind:
 
