@@ -1,0 +1,7 @@
+aiosqlite==0.20.0
+python-dotenv==1.0.1
+hive-agent @ git+https://github.com/hivenetwork-ai/hive-agent-py@main 
+firecrawl-py
+openai
+llama-index-readers-web 
+llama-index
