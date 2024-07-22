@@ -4,4 +4,4 @@ requests==2.31.0
 pydantic==2.7.1
 web3==6.15.1
 
--e /Users/rafael/Desktop/Hive/hive-agent-py
+-e git+https://github.com/hivenetwork-ai/hive-agent-py.git#egg=hive-agent-py
