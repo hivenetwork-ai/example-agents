@@ -1,6 +1,6 @@
 # AAVE agent
 
-This agent provides lending and borrowing of cryptocurrencies from the AAVE pool
+This agent provides lending and borrowing of cryptocurrencies from the AAVE pool. AAVE is a Decentralized Finance (DeFi) protocol that allows users to lend and borrow cryptocurrencies without the need for intermediaries. It operates on a peer-to-peer network, providing liquidity and earning interest for lenders while offering collateralized loans for borrowers.
 
 ## Environment Setup
 You need to specify an `RPC_URL` and `PRIVATE_KEY`  in a _.env_ file in this directory.
@@ -22,7 +22,7 @@ curl --location 'localhost:8000/api/v1/chat' \
     "session_id": "session123",
     "chat_data": {
         "messages": [
-            { "role": "user", "content": "Borrow 5 ETH from the AAVE lending pool, with an interest rate of 2%" }
+            { "role": "user", "content": "Borrow 5 ETH from the AAVE lending pool, with a variable interest rate" }
         ]
     }
 }'
@@ -75,4 +75,15 @@ $ pytest -s
 
 ## Learn More
 
-https://hivenetwork.ai
+Hivenetwork
+- https://hivenetwork.ai
+
+AAVE:
+- Website: https://aave.com/
+- AAVE documentation: https://docs.aave.com/hub
+- AAVE token: https://docs.aave.com/developers/v/1.0/developing-on-aave/the-protocol/aave-token
+- Smart contracts overview: https://docs.aave.com/developers/getting-started/contracts-overview
+
+
+
+
