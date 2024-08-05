@@ -1,0 +1,8 @@
+[model]
+name = "gpt-4o"
+
+[environment]
+type = "dev"
+
+[timeout]
+llm = 60
