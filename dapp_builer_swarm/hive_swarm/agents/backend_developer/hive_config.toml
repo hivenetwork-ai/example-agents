@@ -1,0 +1,8 @@
+[model]
+name = "claude-3-5-sonnet-20240620"
+
+[environment]
+type = "dev"
+
+[timeout]
+llm = 60
