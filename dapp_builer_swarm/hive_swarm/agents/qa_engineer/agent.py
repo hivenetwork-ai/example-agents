@@ -1,7 +1,11 @@
 from hive_agent import HiveAgent, MistralLLM
 
+
 from hive_swarm.agents.instructions import QA_ENGINEER_INSTRUCTION
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 mistral = MistralLLM()
 

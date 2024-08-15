@@ -1,4 +1,4 @@
-from hive_agent import HiveSwarm, OpenAILLM
+from hive_agent import HiveSwarm, OpenAILLM, Config, llm_from_config
 
 from hive_swarm.agents import (
     pm_agent,
@@ -13,7 +13,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-gpt = OpenAILLM()
+config_path = "./hive_swarm/hive_config.toml"
+config = Config(config_path=config_path)
+llm = llm_from_config(config)
+print(f"in hive_swarm/swarm.py, llm is {type(llm)}")
+gpt = OpenAILLM(llm=llm)
 
 dapp_swarm = HiveSwarm(
     name="DeFi Startup",
@@ -27,13 +31,13 @@ dapp_swarm = HiveSwarm(
         backend_developer_agent,
         solidity_developer_agent,
     ],
-    config_path="./hive_swarm/hive_config.toml",
+    config_path=config_path,
     llm=gpt,
     functions=[save_to_file],
 )
 
 # add QA agent
-# dapp_swarm.add_agent(qa_agent)
+dapp_swarm.add_agent(qa_agent)
 
 # remove QA agent
 # dapp_swarm.remove_agent(qa_agent)
