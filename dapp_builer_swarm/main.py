@@ -1,18 +1,9 @@
 import asyncio
-import http.client
-import logging
-import requests
 
 from dotenv import load_dotenv
 
 from hive_swarm import dapp_swarm
 
-# http.client.HTTPConnection.debuglevel = 1
-# logging.basicConfig(level=logging.DEBUG)
-# logger = logging.getLogger("http.client")
-# logger.setLevel(logging.DEBUG)
-# handler = logging.StreamHandler()
-# logger.addHandler(handler)
 
 
 load_dotenv()
