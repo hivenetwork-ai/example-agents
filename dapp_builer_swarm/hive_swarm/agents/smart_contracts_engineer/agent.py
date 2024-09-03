@@ -1,4 +1,8 @@
-from hive_agent import HiveAgent, ClaudeLLM, Config, llm_from_config, tools_from_funcs
+from hive_agent import HiveAgent
+from hive_agent.llms.claude import ClaudeLLM
+from hive_agent.config import Config
+from hive_agent.llms.utils import llm_from_config
+from hive_agent.utils import tools_from_funcs
 
 from hive_swarm.tools import save_to_file
 from hive_swarm.agents.instructions import SMART_CONTRACTS_DEVELOPER_INSTRUCTION
@@ -22,4 +26,5 @@ solidity_developer_agent = HiveAgent(
     functions=[save_to_file],
     llm=claude,
     config_path=config_path,
+    swarm_mode=True,
 )

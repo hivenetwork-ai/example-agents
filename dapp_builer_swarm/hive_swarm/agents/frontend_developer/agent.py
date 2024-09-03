@@ -1,4 +1,8 @@
-from hive_agent import HiveAgent, ClaudeLLM, Config, llm_from_config, tools_from_funcs
+from hive_agent import HiveAgent
+from hive_agent.llms.claude import ClaudeLLM
+from hive_agent.config import Config
+from hive_agent.llms.utils import llm_from_config
+from hive_agent.utils import tools_from_funcs
 
 from hive_swarm.tools import save_to_file
 from hive_swarm.agents.instructions import FRONTEND_DEVELOPER_INSTRUCTION
@@ -9,7 +13,6 @@ load_dotenv()
 config_path = "./hive_swarm/agents/frontend_developer/hive_config.toml"
 config = Config(config_path=config_path)
 llm = llm_from_config(config)
-print(f"in hive_swarm/agents/frontend_developer, llm is {type(llm)}")
 tools = tools_from_funcs([save_to_file])
 claude = ClaudeLLM(llm=llm, tools=tools)
 
@@ -21,4 +24,5 @@ frontend_developer_agent = HiveAgent(
     functions=[save_to_file],
     llm=claude,
     config_path=config_path,
+    swarm_mode=True,
 )

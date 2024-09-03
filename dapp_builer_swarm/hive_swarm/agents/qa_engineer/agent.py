@@ -1,4 +1,5 @@
-from hive_agent import HiveAgent, MistralLLM
+from hive_agent import HiveAgent
+from hive_agent.llms.mistral import MistralLLM
 
 
 from hive_swarm.agents.instructions import QA_ENGINEER_INSTRUCTION
@@ -17,4 +18,5 @@ qa_agent = HiveAgent(
     functions=[],
     llm=mistral,
     config_path="./hive_swarm/agents/qa_engineer/hive_config.toml",
+    swarm_mode=True,
 )

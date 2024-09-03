@@ -1,4 +1,7 @@
-from hive_agent import HiveSwarm, OpenAILLM, Config, llm_from_config
+from hive_agent import HiveSwarm
+from hive_agent.llms.openai import OpenAILLM
+from hive_agent.config import Config
+from hive_agent.llms.utils import llm_from_config
 
 from hive_swarm.agents import (
     pm_agent,
