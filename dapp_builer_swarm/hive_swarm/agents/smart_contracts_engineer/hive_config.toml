@@ -1,0 +1,8 @@
+[model]
+model = "claude-3-opus-20240229"
+
+[environment]
+type = "dev"
+
+[timeout]
+llm = 60

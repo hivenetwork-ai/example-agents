@@ -5,6 +5,7 @@ venv
 .vscode
 .DS_Store
 **/__pycache__/
+hive-agent-data/
 hive_agent.db
 .
 .anima/

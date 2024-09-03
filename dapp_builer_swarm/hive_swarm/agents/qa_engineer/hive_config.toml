@@ -1,0 +1,8 @@
+[model]
+model = "mistral-large-latest"
+
+[environment]
+type = "dev"
+
+[timeout]
+llm = 60
