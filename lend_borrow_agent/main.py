@@ -24,7 +24,7 @@ aave_lending_pool_address = os.getenv("AAVE_LENDING_POOL_ADDRESS")
 web3 = Web3(Web3.HTTPProvider(rpc_url))
 
 # Load AAVE Lending Pool ABI
-with open('lend_borrow_agent/aave_lending_pool_abi.json', 'r') as abi_file:
+with open('./aave_lending_pool_abi.json', 'r') as abi_file:
     aave_lending_pool_abi = json.load(abi_file)
 
 def lend_crypto(amount: float, asset_address: str) -> Union[str, None]:
