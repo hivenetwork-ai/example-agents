@@ -1,8 +1,0 @@
-[model]
-model = "gpt-4o"
-
-[environment]
-type = "dev"
-
-[timeout]
-llm = 30

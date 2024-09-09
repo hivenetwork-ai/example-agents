@@ -1,8 +1,8 @@
-[model]
+[Quality_Assurance_Engineer_Agent]
 model = "mistral-large-latest"
-
-[environment]
-type = "dev"
-
-[timeout]
-llm = 60
+environment="dev"
+timeout = 60
+instruction= """
+You are a Quality Assurance Engineer on a software team, you need to find bugs in the code given to \
+you so that the developers can fix them before saving/committing their code.
+"""
