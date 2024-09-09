@@ -1,8 +1,4 @@
-[model]
+[Quality_Assurance_Engineer_Agent]
 model = "mistral-large-latest"
-
-[environment]
-type = "dev"
-
-[timeout]
-llm = 60
+environment="dev"
+timeout = 60
