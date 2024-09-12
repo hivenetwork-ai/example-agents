@@ -11,7 +11,7 @@ load_dotenv()
 
 async def main():
     print(
-        "Welcome to the dApp Builder Swarm!\nVisit https://HiveNetwork.ai to learn more.\n\nType 'exit' to quit.\n"
+        "Welcome to the dApp Builder Swarm!\nVisit https://SwarmZero.ai to learn more.\n\nType 'exit' to quit.\n"
     )
 
     while True:
