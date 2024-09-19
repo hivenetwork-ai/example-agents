@@ -1,6 +1,6 @@
 from hive_agent import HiveSwarm
-from hive_swarm.tools import save_to_file,list_files, read_from_file
-from hive_swarm.tools import download_from_url
+from swarm.tools import save_to_file,list_files, read_from_file
+from swarm.tools import download_from_url
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -8,7 +8,7 @@ load_dotenv()
 from hive_agent.sdk_context import SDKContext
 
 
-config_path = "./hive_swarm/hive_config.toml"
+config_path = "./swarm/hive_config.toml"
 sdk_context = SDKContext(config_path=config_path)
 
 livepeer_swarm = HiveSwarm(

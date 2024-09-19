@@ -27,7 +27,7 @@ def video_editor(video_files: list[str], output_filename: str):
             scaling_factor = max(width_ratio, height_ratio)
 
             # Resize the clip to cover the target area
-            clip_resized = clip.resize(scaling_factor)
+            clip_resized = clip.resize(height=int(clip.h * scaling_factor))
 
             # Center crop the clip to target dimensions
             clip_cropped = clip_resized.crop(
@@ -63,4 +63,3 @@ def video_editor(video_files: list[str], output_filename: str):
     )
 
     return output_filename
-
