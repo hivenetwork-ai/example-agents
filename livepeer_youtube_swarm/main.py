@@ -2,7 +2,7 @@ import asyncio
 
 from dotenv import load_dotenv
 
-from swarm import livepeer_swarm
+from hive_swarm import livepeer_swarm
 
 
 load_dotenv()
