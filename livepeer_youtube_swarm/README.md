@@ -34,7 +34,7 @@ The Livepeer Youtube Video Generator Swarm is an AI-powered tool that automates 
 4. Set up YouTube API credentials:
    Place your `client_secret.json` file in the root directory.
    You can get your OAuth 2.0 API key using Google API Console [here](https://developers.google.com/identity/protocols/oauth2).
-   You should add `http://localhost:8088/flowName=GeneralOAuthFlow` as a valid redirect URI for your OAuth client ID.
+   You should add `http://localhost:8088` as a valid redirect URI for your OAuth client ID.
 
 ## Usage
 
