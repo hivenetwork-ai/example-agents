@@ -4,6 +4,9 @@
 
 The Livepeer Youtube Video Generator Swarm is an AI-powered tool that automates the process of creating and uploading YouTube videos. It utilizes a swarm of specialized agents to handle different aspects of video production, from script writing to YouTube uploading.
 
+## Agent Swarm Architecture Diagram
+![Diagram](./ai_youtuber_swarm_architecture.png)
+
 ## Features
 
 - Automated video creation pipeline
@@ -68,4 +71,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Acknowledgements
 
 - Livepeer for providing the AI image and video generation capabilities
-- HiveNetwork.ai for the swarm intelligence framework
+- SwarmZero.ai for the swarm intelligence framework

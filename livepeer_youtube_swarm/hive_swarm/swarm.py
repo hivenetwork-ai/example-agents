@@ -45,12 +45,7 @@ livepeer_swarm = HiveSwarm(
 
     Remember to adapt your management style based on the specific video topic and requirements provided by the user.
     """,
-    functions=[save_to_file,list_files, read_from_file, download_from_url],
+    functions=[save_to_file, list_files, read_from_file, download_from_url],
     sdk_context=sdk_context,
-
+    # max_iterations=99,
 )
-
-
-    
-
-
