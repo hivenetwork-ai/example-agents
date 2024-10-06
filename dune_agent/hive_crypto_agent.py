@@ -5,10 +5,12 @@ import requests
 import time
 import logging
 from dotenv import load_dotenv
+from structures import get_structured_response, IndexResult, NarrativeResult
 
 load_dotenv()
 
 dunekey = os.getenv("DUNE_API_KEY")
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -72,10 +74,10 @@ def get_results(query_id):
 
 def run_dune_query(query_id):
     try:
-        execution = execute_query(query_id)
-        execution_id = execution.json()["execution_id"]
-        executed_query_id = wait_for_execution(execution_id)
-        query_id = executed_query_id.json()["query_id"]
+        # execution = execute_query(query_id)
+        # execution_id = execution.json()["execution_id"]
+        # executed_query_id = wait_for_execution(execution_id)
+        # query_id = executed_query_id.json()["query_id"]
         results = get_results(query_id)
         return dict(results.json())
     except Exception as e:
@@ -91,6 +93,15 @@ def get_alpha_index():
     """
     return run_dune_query(query_ids["Alpha"])
 
+def get_structured_alpha_index():
+    """
+    Fetches the data for the Alpha index to show on the UI embedded in component.
+
+    :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
+    """
+    response =run_dune_query(query_ids["Alpha"])
+
+    return get_structured_response(response, IndexResult)
 
 def get_beta_index():
     """
@@ -99,6 +110,15 @@ def get_beta_index():
     :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
     """
     return run_dune_query(query_ids["Beta"])
+
+def get_structured_beta_index():
+    """
+    Fetches the data for the Beta index to show on the UI embedded in component.
+
+    :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
+    """
+    response = run_dune_query(query_ids["Beta"])
+    return get_structured_response(response, IndexResult)
 
 
 def get_gamma_index():
@@ -109,6 +129,15 @@ def get_gamma_index():
     """
     return run_dune_query(query_ids["Gamma"])
 
+def get_structured_gamma_index():
+    """
+    Fetches the data for the Gamma index to show on the UI embedded in component.
+
+    :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
+    """
+    response = run_dune_query(query_ids["Gamma"])
+    return get_structured_response(response, IndexResult)
+
 
 def get_daily_narrative_index():
     """
@@ -118,6 +147,14 @@ def get_daily_narrative_index():
     """
     return run_dune_query(query_ids["24h"])
 
+def get_structured_daily_narrative_index():
+    """
+    Fetches the data for the daily (24h) Crypto Narrative index.
+
+    :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
+    """
+    response = run_dune_query(query_ids["24h"])
+    return get_structured_response(response, NarrativeResult)
 
 def get_weekly_narrative_index():
     """
@@ -126,6 +163,15 @@ def get_weekly_narrative_index():
     :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
     """
     return run_dune_query(query_ids["7d"])
+
+def get_structured_weekly_narrative_index():
+    """
+    Fetches the data for the weekly (7d) Crypto Narrative index.
+
+    :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
+    """
+    response = run_dune_query(query_ids["7d"])
+    return get_structured_response(response, NarrativeResult)
 
 
 def get_monthly_narrative_index():
@@ -136,6 +182,15 @@ def get_monthly_narrative_index():
     """
     return run_dune_query(query_ids["30d"])
 
+def get_structured_monthly_narrative_index():
+    """
+    Fetches the data for the monthly (30d) Crypto Narrative index.
+
+    :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
+    """
+    response = run_dune_query(query_ids["30d"])
+    return get_structured_response(response, NarrativeResult)
+
 
 def get_quarterly_narrative_index():
     """
@@ -144,6 +199,15 @@ def get_quarterly_narrative_index():
     :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
     """
     return run_dune_query(query_ids["90d"])
+
+def get_structured_quarterly_narrative_index():
+    """
+    Fetches the data for the quarterly (90d) Crypto Narrative index.
+
+    :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
+    """
+    response = run_dune_query(query_ids["90d"])
+    return get_structured_response(response, NarrativeResult)
 
 
 query_ids = {
@@ -156,15 +220,30 @@ query_ids = {
     "90d": "3600267",
 }
 
-instruction = """ You are responsible for giving information about indexes and crypto narratives to get updated market data.
-You can give information about ALPHA Index, Beta Index,Gama Index,Daily Crypto Narratives,Weekly Crypto Narratives,Mothly Crypto Narratives,Quarterly Crypto Narratives.
+instruction = """
+1. **Always prefer using structured functions** to retrieve and provide data. Only use raw data if the user specifically requests it.
+   
+2. When you call structured functions, you **must respond in the following format:**
+   ```json
+    {rows: [...]
+    metadata: ..., 
+    role : ...}
+You should not include any additional text or explanations outside of this format.
 
-Additional information about these indexes.
-Daily alpha index of the TOP 10 coins from all narratives based on Optimized Relative Strength
-ALPHA Index is from 7D timeframe
-BETA Index is from 30D timeframe
-GAMMA Index is from 90D timeframe
+3.	You are responsible for providing market data and narratives about the following indexes and cryptocurrencies:
+ALPHA Index (7D timeframe)
+BETA Index (30D timeframe)
+GAMMA Index (90D timeframe)
+Daily Crypto Narratives
+Weekly Crypto Narratives
+Monthly Crypto Narratives
+Quarterly Crypto Narratives
 
+4.	Detailed index information:
+The Daily ALPHA Index includes the TOP 10 coins across all narratives, based on Optimized Relative Strength (ORS).
+ALPHA Index is based on a 7-day timeframe.
+BETA Index is based on a 30-day timeframe.
+GAMMA Index is based on a 90-day timeframe.
 Relative Strength Crypto Narrative 
 Calculate relative strength of a crypto Narrative, along with relative strength of Different coins under the crypto Narrative. 
 Methodology : 
@@ -201,20 +280,33 @@ PENDLE, GNS, COW, RCH, RSR, FLIP, RVF, GMX, GEAR, WELL, AEVO, PERP, MAV, HFT, SY
 MEMECOINS
 POPCAT, MOG, DOG, BOBO, DOGE, TOSHI, APU, TRUMP, SHIB, PEPE, COQ, WIF, BOOP, MYRO, FLOKI, AIDOGE, ORDI, BONK, PEPECOIN, MEME, CORGIAI, NPC
 RWA (Real World Asset)
-TRADE, OM, CANTO, POLY, CHEX, BOSON, TRU, IXS, LNDX, GFI, PRO, NXRA, RIO, MPL, ONDO, DUSK, CTC, KLIMA  """
+TRADE, OM, CANTO, POLY, CHEX, BOSON, TRU, IXS, LNDX, GFI, PRO, NXRA, RIO, MPL, ONDO, DUSK, CTC, KLIMA 
 
+Key rules:
+
+Always return structured data in JSON format when retrieving market or index data.
+Do not include additional commentary unless explicitly asked by the user.
+
+"""
 my_agent = HiveAgent(
     name="crypto_narrative_document_agent",
     functions=[
         get_alpha_index,
+        get_structured_alpha_index,
         get_beta_index,
+        get_structured_beta_index,
         get_gamma_index,
+        get_structured_gamma_index,
         get_daily_narrative_index,
+        get_structured_daily_narrative_index,
         get_weekly_narrative_index,
+        get_structured_weekly_narrative_index,
         get_monthly_narrative_index,
+        get_structured_monthly_narrative_index,
         get_quarterly_narrative_index,
+        get_structured_quarterly_narrative_index,
     ],
     instruction=instruction,
-    config_path=get_config_path("hive_config.toml")
+    config_path=get_config_path("hive_config.toml"),
 )
 my_agent.run()
