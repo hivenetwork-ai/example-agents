@@ -11,5 +11,6 @@ llm = 30
 prompts = [
   "Can I get alpha index?",
   "Give beta index with explanations",
+  "Give yearly narrative index",
   "How performed monthly narrative index?"
 ]
