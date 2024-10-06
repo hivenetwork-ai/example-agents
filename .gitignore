@@ -8,3 +8,11 @@ venv
 hive_agent.db
 .
 .anima/
+
+hive-agent-data
+db/*.db
+
+node_modules
+.env
+.next
+out
