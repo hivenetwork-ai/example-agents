@@ -11,6 +11,7 @@ load_dotenv()
 
 dunekey = os.getenv("DUNE_API_KEY")
 
+real_time_query = False
 
 logging.basicConfig(level=logging.INFO)
 
@@ -74,12 +75,16 @@ def get_results(query_id):
 
 def run_dune_query(query_id):
     try:
-        # execution = execute_query(query_id)
-        # execution_id = execution.json()["execution_id"]
-        # executed_query_id = wait_for_execution(execution_id)
-        # query_id = executed_query_id.json()["query_id"]
-        results = get_results(query_id)
-        return dict(results.json())
+        if real_time_query == True:
+            execution = execute_query(query_id)
+            execution_id = execution.json()["execution_id"]
+            executed_query_id = wait_for_execution(execution_id)
+            query_id = executed_query_id.json()["query_id"]
+            results = get_results(query_id)
+            return dict(results.json())
+        else:
+            results = get_results(query_id)
+            return dict(results.json())
     except Exception as e:
         logging.error(f"an error occurred: {e}")
         return None
