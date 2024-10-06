@@ -9,8 +9,8 @@ llm = 30
 
 [sample_prompts]
 prompts = [
-  "Can I get alpha index?",
-  "Give beta index with explanations",
-  "Give yearly narrative index",
-  "How performed monthly narrative index?"
+  "Can I get the Alpha Index?",
+  "Provide the Beta Index with explanations.",
+  "Provide the Yearly Narrative Index.",
+  "How did the Monthly Narrative Index perform?"
 ]
