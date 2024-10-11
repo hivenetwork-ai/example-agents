@@ -1,13 +1,23 @@
 import os
 import requests
 
-from datetime import datetime, timedelta
+
 from dotenv import load_dotenv
+load_dotenv()
+
+langtrace_api_key = os.getenv("LANGTRACE_API_KEY", "")
+if langtrace_api_key:
+    from langtrace_python_sdk import langtrace
+    langtrace.init(
+        api_key=langtrace_api_key, 
+        disable_instrumentations={ "only": ["sqlalchemy"] }
+    )
+
+from datetime import datetime, timedelta
 from hive_agent import HiveAgent
 from newsapi import NewsApiClient
 from typing import Optional, Dict, List, Literal
 
-load_dotenv()
 
 newsapi = NewsApiClient(api_key=os.getenv("NEWS_API_KEY"))
 page_size = 10

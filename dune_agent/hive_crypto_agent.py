@@ -1,13 +1,24 @@
-from hive_agent import HiveAgent
+import logging
 import os
-from typing import Optional, Dict
 import requests
 import time
-import logging
+
+
 from dotenv import load_dotenv
+load_dotenv()
+
+langtrace_api_key = os.getenv("LANGTRACE_API_KEY", "")
+if langtrace_api_key:
+    from langtrace_python_sdk import langtrace
+    langtrace.init(
+        api_key=langtrace_api_key,
+        disable_instrumentations={ "only": ["sqlalchemy"] }
+    )
+
+
+from hive_agent import HiveAgent
 from structures import get_structured_response, IndexResult, NarrativeResult
 
-load_dotenv()
 
 dunekey = os.getenv("DUNE_API_KEY")
 

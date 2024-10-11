@@ -1,1 +1,2 @@
 hive-agent @ git+https://github.com/hivenetwork-ai/hive-agent-py@main
+langtrace-python-sdk
